@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        .hero {
+            background-image: url('img1.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            color: rgb(255, 0, 212);
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+        .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+        }
+        .card-img-top {
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensure images cover the area */
+        }
+        footer {
+            background-color: #343a40; /* Dark background */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative; /* Ensure footer is positioned at the bottom */
+        }
+        @media(max-width: 100px) {
+            .navbar-nav {
+                text-align: center;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+            alert("Thank you for your order!"); // Show thank-you message
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">WEBSITE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#items">HOME</a> <!-- Adjusted href -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointment">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div>
+            <h1>welcome</h1>
+            <p class="lead">GRAND OPENING</p>
+            <a href="#items" class="btn btn-primary btn-lg">View more</a>
+        </div>
+    </section>
+    <section id="items" class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <p class="lead">OFFERS AND DISCOUNTS ARE AVAILABLE</p>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img5.png" class="card-img-top" alt="item1">
+                        <div class="card-body">
+                            <h5 class="card-title">SWEETS</h5>
+                            <p class="card-text">Tasty and delicious.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img6.png" class="card-img-top" alt="item2">
+                        <div class="card-body">
+                            <h5 class="card-title">HOME MADE TASTE</h5>
+                            <p class="card-text">Fantasy sweets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img7.png" class="card-img-top" alt="item3">
+                        <div class="card-body">
+                            <h5 class="card-title">TRADITIONAL SWEETS</h5>
+                            <p class="card-text">Special taste for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="order" class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <h2>order your snacks</h2>
+                <p class="lead">fill the form to deliver to your address</p>
+            </div>
+            <form id="delivery-form" class="needs-validation" novalidate onsubmit="handleSubmit(event)">
+                <div class="mb-3">
+                    <label for="name" class="form-label">full name</label>
+                    <input type="text" class="form-control" id="name" placeholder="enter your name" required>
+                    <div class="invalid-feedback">please enter your name</div>
+                </div> 
+                <div class="mb-3">
+                    <label for="phone" class="form-label">number</label>
+                    <input type="number" class="form-control" id="phone" placeholder="enter your number" required>
+                    <div class="invalid-feedback">please enter your number</div>
+                </div> 
+                <div class="mb-3">
+                    <label for="address" class="form-label">full address</label>
+                    <input type="text" class="form-control" id="address" placeholder="enter your address" required>
+                    <div class="invalid-feedback">please enter your address</div>
+                </div>     
+                <button type="submit" class="btn btn-primary w-100">submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; YOURS HOME. All rights reserved.</p>
+        <p><a href="#services" style="color: white; text-decoration: underline;">EMAIL:bakery@gmail.com</a></p>
+    </footer>
+</body>
+</html>
